@@ -41,6 +41,21 @@ public class DemoApplicationTests {
                         "{id : 'javascript', 'name' : 'JavaScript', 'description' : 'JavaScript Description'}]"));
     }
 	
+	@Test
+	public void getTopicTest() throws Exception {
+		mockMvc.perform(get("/topics/java").accept(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk())
+				.andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8));
+	}
+	
+//	@Test
+//    public void getTopicJavaTest() throws Exception {
+//        mockMvc.perform(get("/topics/java").accept(MediaType.APPLICATION_JSON))
+//                .andExpect(status().isOk())
+//                .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
+//                .andExpect(content().json("[{id : 'java', name : 'Core Java', description : 'Core Java Description'}]"));
+//    }
+	
 	
 
 }
